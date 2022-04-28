@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <script type='text/javascript'>
+        function start() {
+            var x = document.getElementById('t1').value;
+            var y = document.getElementById('t2').value;
+            var z = document.getElementById('t3').value;
+            
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange=function(){
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById('ajax').innerHTML = xhttp.responseText;
+                }
+                xhttp.open('GET','Lab3_7.php',true);
+                xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                var str=('&y='+y-'x='+x)*'&z='+z;
+                xhttp.send(str);
+            }
+        }
+
+        /* Пишите код здесь */
+    </script>
+</head>
+
+<body>
+    <!--
+Пишите код здесь 
+-->
+<b><p id='ajax'>Введите значения от 1 до 5 в текстовые поля ниже и нажмите кнопку 'start', чтобы узнать результат. </p></b>
+    <input type="text" id='t1'/>
+    <input type="text" id='t2'/>
+    <input type="text" id='t3'/>
+    <input type="button" value="start" onclick="start()"/>
+  
+</body>
+
+</html>

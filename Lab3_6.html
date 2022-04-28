@@ -1,0 +1,64 @@
+﻿<html>
+<head>
+   <style type="text/css">
+      #code
+      {
+      background-color:#fffDBD;
+      margin:10px;
+      padding:5px;
+      }
+      </style>   
+<script type='text/javascript'>
+    function winter(){
+   xhttp=new XMLHttpRequest();
+   xhttp.onreadystatechange=function(){
+      if (xhttp.readyState==4 && xhttp.status==200)
+         document.getElementById('res').innerHTML=xhttp.responseText;
+      }
+   xhttp.open('GET','winter.txt', true);
+   xhttp.send();
+    }
+    function spring(){
+   xhttp=new XMLHttpRequest();
+   xhttp.onreadystatechange=function(){
+      if (xhttp.readyState==4 && xhttp.status==200)
+         document.getElementById('res').innerHTML=xhttp.responseText;
+      }
+   xhttp.open('GET','spring.txt', true);
+   xhttp.send();
+    }
+    function summer(){
+   xhttp=new XMLHttpRequest();
+   xhttp.onreadystatechange=function(){
+      if (xhttp.readyState==4 && xhttp.status==200)
+         document.getElementById('res').innerHTML=xhttp.responseText;
+      }
+   xhttp.open('POST','summer.txt', true);
+   xhttp.send();
+    }
+    function autumn(){
+   xhttp=new XMLHttpRequest();
+   xhttp.onreadystatechange=function(){
+      if (xhttp.readyState==4 && xhttp.status==200)
+         document.getElementById('res').innerHTML=xhttp.responseText;
+      }
+   xhttp.open('POST','autumn.txt', true);
+   xhttp.send();
+    }
+</script>
+</head>
+<body>
+<!--
+Пишите код здесь 
+-->
+<div><p id='res'>Описание поры года</p></div>
+
+<div id="code">
+
+   <input id="winter" type="button" value='winter'onclick='winter()'/>
+   <input id="spring" type="button" value='spring'onclick='spring()'/>
+    <input id="summer" type="button" value='summer'onclick='summer()'/>
+   <input id="autumn" type="button" value='autumn'onclick='autumn()' />
+   </div>
+</body>
+</html>
